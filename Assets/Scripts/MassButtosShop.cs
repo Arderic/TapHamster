@@ -7,7 +7,7 @@ public class MassButtosShop : MonoBehaviour
     //[SerializeField] List<ScriptableBuyButton> MassButtonClickStart = new List<ScriptableBuyButton>();
     //[SerializeField] List<ScriptableBuyButton> MassButtonAutoStart = new List<ScriptableBuyButton>();
 
-    public List<ScriptableBuyButton>  MassButton = new List<ScriptableBuyButton>();
+    public List<ScriptableBuyButton>  MassButton = new();
 
     //private void Start()
     //{

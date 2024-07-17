@@ -693,6 +693,7 @@ MonoBehaviour:
   _button: {fileID: 0}
   _buttonSetting: {fileID: 0}
   Level: 1
+  Index: 0
   NameUpgrade: {fileID: 311528170462857440}
   NameBuff: {fileID: 3464632342952074587}
   NameCost: {fileID: 8817234914531632347}

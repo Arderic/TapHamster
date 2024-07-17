@@ -136,6 +136,7 @@ GameObject:
   - component: {fileID: 519420029}
   - component: {fileID: 519420033}
   - component: {fileID: 519420034}
+  - component: {fileID: 519420035}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -232,6 +233,8 @@ MonoBehaviour:
   Score: 0
   ScoreText: {fileID: 1803388737}
   AutoText: {fileID: 1233761524}
+  MassButtosShop: {fileID: 0}
+  gameData: {fileID: 519420035}
 --- !u!114 &519420034
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -249,6 +252,19 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 77eb0c2c6cb7a73488e4882e71e354c1, type: 2}
   - {fileID: 11400000, guid: ce2c144530db2914ca1047e6c822fc51, type: 2}
   - {fileID: 11400000, guid: ba71d01d5b61fb244a4952a0db14755c, type: 2}
+--- !u!114 &519420035
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 519420028}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da0ad1e5be141b64092498a436c373d7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MassButtosShop: {fileID: 0}
 --- !u!1 &662092915
 GameObject:
   m_ObjectHideFlags: 0
@@ -1233,6 +1249,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MassButtosShop: {fileID: 519420034}
   ContentPunnelShop: {fileID: 1252801657}
+  gameData: {fileID: 519420035}
   PrefabButton: {fileID: 8464369877293775893, guid: 44b650b0976b8e548a8b0500c15efae8, type: 3}
 --- !u!1 &1803388735
 GameObject:

@@ -12,20 +12,46 @@ public class Game : MonoBehaviour
     private int MakeAuto = 0;
     public Text ScoreText;
     public TextMeshProUGUI AutoText;
-
+    [SerializeField] MassButtosShop MassButtosShop;
 
     private void Awake()
     {
-        
+        FindObjectOfType<GameData>().SetStartDataScore();
     }
     private void Start()
     {
         StartCoroutine(AutoShop());
+        StartCoroutine(SaveScore());
     }
 
     public void OnClicHamster()
     {
         Score += ClickScore;
+    }
+
+    //public void SetStartGameSetting()
+    //{
+    //    for(int i = 0; i < MassButtosShop.MassButton.Count; i++)
+    //    {
+    //        FindObjectOfType<GameData>().SetMainStartData(i);
+    //    }
+    //}
+    public void SetScore(int _score)
+    {
+        Score += _score;
+    }
+    public void SetAutoMake(int lvl, int index, BuyButton buybutton)
+    {
+        MakeAuto += buybutton.GetMakeAuto() * lvl;
+    }
+    public void SetClickMake(int lvl, int index, BuyButton buybutton)
+    {
+        ClickScore += buybutton.GetMakeClick() * lvl;
+    }
+
+    public int GetScore()
+    {
+        return Score;
     }
 
     private void Update()
@@ -54,6 +80,15 @@ public class Game : MonoBehaviour
         {
             Score += MakeAuto;
             yield return new WaitForSeconds(1);
+        }
+    }
+
+    IEnumerator SaveScore()
+    {
+        while (true)
+        {
+            FindObjectOfType<GameData>().SetDataScore(this);
+            yield return new WaitForSeconds(1);           
         }
     }
 }

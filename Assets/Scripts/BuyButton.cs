@@ -8,9 +8,13 @@ public class BuyButton : MonoBehaviour
 {
     [SerializeField] private Button _button;
 
+    //[SerializeField] private GameData _gameData;
+
     [SerializeField] private ScriptableBuyButton _buttonSetting;
 
-    [SerializeField] private int Level = 1;
+    [SerializeField] private int Level;
+
+    [SerializeField] private int Index;
 
     public TextMeshProUGUI NameUpgrade;
     public TextMeshProUGUI NameBuff;
@@ -26,14 +30,17 @@ public class BuyButton : MonoBehaviour
             if (_buttonSetting.MakeAuto != 0) NameBuff.text = _buttonSetting.SNameBuff;
             else NameBuff.text = _buttonSetting.SNameBuff;
             NameCost.text = _buttonSetting.Cost * Level + "$";
+            FindObjectOfType<GameData>().SetDataButton(this, Index);
         });
 
     }
 
 
-    public void SetSettingButton(ScriptableBuyButton ButtonSetting)
+    public void SetSettingButton(ScriptableBuyButton ButtonSetting, int index, Progress progress)
     {
+        Index = index;
         _buttonSetting = ButtonSetting;
+        FindObjectOfType<GameData>().SetButtonStartData(this, Index);
         NameUpgrade.text = _buttonSetting.SNameUpgrade;
         if (_buttonSetting.MakeAuto != 0) NameBuff.text = _buttonSetting.SNameBuff;
         else NameBuff.text = _buttonSetting.SNameBuff;
@@ -54,6 +61,10 @@ public class BuyButton : MonoBehaviour
         return _buttonSetting.MakeClick;
     }
 
+    public void SetLvl(int i)
+    {
+        Level = i;
+    }
     public void LvlUp()
     {
         Level += 1;

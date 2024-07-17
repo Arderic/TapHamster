@@ -24,10 +24,8 @@ public class ScriptableBuyButton : ScriptableObject
     //public int MakeAuto => _makeAuto;
     //public Sprite BuyIcon => _buyIcon;
 
-    [SerializeField] private int _levelUpgrade = 1;
 
-    public int LevelUpgrade => _levelUpgrade;
-
+    public int LevelUpgrade = 1;
     public string SNameUpgrade;
     public string SNameBuff;
     public string SNameCost;
