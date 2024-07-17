@@ -42,11 +42,11 @@ public class Game : MonoBehaviour
     }
     public void SetAutoMake(int lvl, int index, BuyButton buybutton)
     {
-        MakeAuto += buybutton.GetMakeAuto() * lvl;
+        MakeAuto += buybutton.GetMakeAuto() * (lvl - 1);
     }
     public void SetClickMake(int lvl, int index, BuyButton buybutton)
     {
-        ClickScore += buybutton.GetMakeClick() * lvl;
+        ClickScore += buybutton.GetMakeClick() * (lvl - 1);
     }
 
     public int GetScore()

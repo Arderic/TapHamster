@@ -45,6 +45,12 @@ public class GameData : MonoBehaviour
         SaveData();
     }
 
+    public void DeleteData()
+    {
+
+        PlayerPrefs.DeleteAll();
+        
+    }
     private void SaveData() 
     {
         string saveJson = JsonUtility.ToJson(_buttonProgress);
@@ -55,7 +61,7 @@ public class GameData : MonoBehaviour
 
     public void NewData()
     {
-        for (int i = 0; i < MassButtosShop.MassButton.Count; i++)
+        for (int i = 0; i < FindObjectOfType<Game>().GetComponent<MassButtosShop>().MassButton.Count; i++)
         {
             Progress NewProgress = new Progress();
             NewProgress.Level = 1;
